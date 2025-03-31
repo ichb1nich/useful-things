@@ -118,7 +118,7 @@ button:hover {
     display: flex;
     justify-content: center; /* Horizontale Zentrierung */
     align-items: center;    /* Vertikale Zentrierung */
-    width: 30%;
+    width: 35%;
     aspect-ratio: 1/1;
     text-align: center;
     font-size: 1em;         /* Einheitliche Schriftgröße */
