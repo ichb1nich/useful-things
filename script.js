@@ -15,13 +15,17 @@ function getInput() {
     const number = random(min, max);
 
     if (!isNaN(number)) {
-        document.getElementById("random").textContent = number;
+        document.getElementById("output").textContent = number;
     } else {
-        document.getElementById("random").textContent = "Bitte gib gültige Zahlen ein.";
+        document.getElementById("output").textContent = "Bitte gib gültige Zahlen ein.";
     }
 }
 
 function random(min, max) {
     const number = Math.floor(Math.random() * (max - min + 1) + min)
     return number
+}
+
+function tell(say) {
+    document.getElementById("output").textContent = say[random(0, say.length - 1)];
 }

@@ -111,13 +111,14 @@ button:hover {
     gap: 10px;             /* Abstand zwischen den Buttons */
     margin-top: 20px;      /* Abstand nach oben */
     width: 100%;          /* Volle Breite für die Buttonliste */
+    flex-wrap: wrap;      /* Zeilenumbruch bei kleinen Bildschirmen */
 }
 
 .buttonlist button {
     display: flex;
     justify-content: center; /* Horizontale Zentrierung */
     align-items: center;    /* Vertikale Zentrierung */
-    width: 20%;
+    width: 30%;
     aspect-ratio: 1/1;
     text-align: center;
     font-size: 1em;         /* Einheitliche Schriftgröße */
