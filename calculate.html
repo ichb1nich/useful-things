@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
@@ -9,14 +9,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>JAhrsager</h1>
+    <h1>Taschenrechner</h1>
 
     <div class="button">
-        <button type="submit" onclick="tell(['Ja!', 'Natürlich!', 'Auf jeden fall!', 'Du schaffst das locker!', 'Das wird nicht so schlimm!'])">Soll ich?</button>
+        <input type="text" id="calculate-input" placeholder="Gib hier deine Rechnung ein!">
+        <button type="submit" onclick="calculate('calculate-input', 'calculate-output')">Berechnen</button>
     </div>
 
     <div>
-        <p id="output">...</p>
+        <p id="calculate-output">...</p>
     </div>
 
     <div>

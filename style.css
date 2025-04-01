@@ -31,6 +31,9 @@ div {
     width: 80%;
     max-width: 400px;
     text-align: center;
+    display: flex; /* Ensure flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+    gap: 10px; /* Add spacing between objects */
 }
 
 input[type="text"] {
