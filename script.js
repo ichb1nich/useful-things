@@ -33,8 +33,8 @@ function tell(say, output) {
 function calculate(input, output) {
     let result = 0;
 
-    let formula = document.getElementById(input).value;
-    formula = formula.replace(" ", "");
+    let temp = document.getElementById(input).value;
+    const formula = temp.replace(/ /g, "");
     let formulaNumbers = formula.split(/[\+\-\*\/]/);
     let formulaActions = formula.split(/[0-9]/).filter(action => action.trim() !== "");
 

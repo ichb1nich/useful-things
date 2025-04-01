@@ -31,9 +31,20 @@ div {
     width: 80%;
     max-width: 400px;
     text-align: center;
-    display: flex; /* Ensure flexbox layout */
-    flex-direction: column; /* Stack children vertically */
+    display: block; /* Stack elements vertically */
     gap: 10px; /* Add spacing between objects */
+}
+
+div.threerow {
+    display: flex; /* Ensure flexbox layout */
+    flex-wrap: wrap; /* Allow wrapping to the next row */
+    gap: 10px; /* Add spacing between objects */
+    justify-content: space-between; /* Distribute items evenly */
+}
+
+div.threerow > * {
+    flex: 1 1 calc(33.33% - 10px); /* Allow up to three items per row */
+    max-width: calc(33.33% - 10px); /* Ensure items don't exceed one-third of the row */
 }
 
 input[type="text"] {
@@ -49,6 +60,10 @@ input[type="text"] {
 /* Button */
 .button {
     margin-top: 20px;
+}
+
+.button button {
+    margin-top: 10px; /* Add spacing above the button */
 }
 
 button {
