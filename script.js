@@ -3,8 +3,8 @@ function windowLocation(link) {
 }
 
 function getRandomNumber(output) {
-    const min = parseInt(document.getElementById("min").value);
-    const max = parseInt(document.getElementById("max").value);
+    let min = parseInt(document.getElementById("min").value);
+    let max = parseInt(document.getElementById("max").value);
 
     if (min > max) {
         const temp = min;
@@ -53,51 +53,83 @@ function calculate(input, output) {
     }
 
     console.log(formula);
-    console.log(formulaNumbers);
-    console.log(formulaActions);
+    console.log("Nummer Komponenten: " + formulaNumbers.toString());
+    console.log("Rechenzeichen Komponenten: " + formulaActions.toString());
 
     if (formulaNumbers[0] == "") {
         formulaNumbers.splice(0, 1);
     }
 
-    for (let i = 0; i < formulaActions.length; i++) {
+    let tempFormulaActionsLength = formulaActions.length - 1;
+    let tempFormulaActions = formulaActions;
+    tempFormulaActions.reverse();
+    let tempFormulaNumbers = formulaNumbers;
+    tempFormulaNumbers.reverse();
+
+    for (let i = tempFormulaActionsLength; i >= 0; i--) {
+        console.log(tempFormulaActions[i]);
+
         if (["*", "/"].includes(formulaActions[i])) {
-            let number1 = formulaNumbers[i];
-            let number2 = formulaNumbers[i + 1];
+            let number1 = tempFormulaNumbers[i + 1];
+            let number2 = tempFormulaNumbers[i];
 
-            formulaNumbers.splice(i, 1);
-        formulaNumbers.splice(i + 1, 1);
+            console.log("Nummer 1: " + number1);
+            console.log("Nummer 2: " + number2);
 
-            if (formulaActions[i] == "*") {
+            tempFormulaNumbers.splice(i, 1);
+            tempFormulaNumbers.splice(i, 1);
+
+            if (tempFormulaActions[i] == "*") {
                 result = number1 * number2;
-            } else if (formulaActions[i] == "/") {
+                console.log("Multiplikation: " + result);
+            } else if (tempFormulaActions[i] == "/") {
                 result = number1 / number2;
+                console.log("Division: " + result);
             }
 
-            formulaNumbers.splice(i, 0, result);
+            tempFormulaActions.splice(i, 1);
+            tempFormulaNumbers.splice(i, 0, result);
+
+            console.log("Nummer Komponenten: " + tempFormulaNumbers.toString());
+            console.log("Rechenzeichen Komponenten: " + tempFormulaActions.toString());
         }
     }
 
-    while (formulaActions.length > 0) {
+    tempFormulaActions.reverse();
+    formulaActions = tempFormulaActions;
+    tempFormulaNumbers.reverse();
+    formulaNumbers = tempFormulaNumbers;
+
+    while (formulaNumbers.length > 1) {
         let number1 = formulaNumbers[0];
         let number2 = formulaNumbers[1];
 
-        formulaNumbers.splice(0, 1);
+        
         formulaNumbers.splice(1, 1);
+        formulaNumbers.splice(0, 1);
 
         if (formulaActions[0] == "+") {
             result = number1 + number2;
+            console.log("Addition: " + result);
         } else if (formulaActions[0] == "-") {
             result = number1 - number2;
+            console.log("Subtraktion: " + result);
+        } else {
+            result = "Ein Fehler ist aufgetreten.";
+            console.log(result);
         }
 
         formulaNumbers.splice(0, 0, result);
         formulaActions.splice(0, 1);
+        
+        console.log("Nummer Komponenten: " + formulaNumbers.toString());
+        console.log("Rechenzeichen Komponenten: " + formulaActions.toString());
     }
 
     result = formulaNumbers[0];
 
-    if (isNaN(result)) {
+    if (result == "Ein Fehler ist aufgetreten."){
+    }else if (isNaN(result)) {
         result = "Bitte gib eine gültige Formel ein.";
     }
 
