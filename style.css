@@ -40,6 +40,7 @@ div.threerow {
     flex-wrap: wrap; /* Allow wrapping to the next row */
     gap: 10px; /* Add spacing between objects */
     justify-content: space-between; /* Distribute items evenly */
+    justify-content: center;
 }
 
 div.threerow > * {

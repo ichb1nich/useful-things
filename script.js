@@ -30,6 +30,16 @@ function tell(say, output) {
     document.getElementById(output).textContent = say[random(0, say.length - 1)];
 }
 
+function addText(add, id) {
+    const element = document.getElementById(id);
+
+    if (element.tagName == "P" || element.tagName == "H1" || element.tagName == "H2" || element.tagName == "H3" || element.tagName == "H4" || element.tagName == "H5" || element.tagName == "H6" || element.tagName == "H7" || element.tagName == "H8") {
+        element.textContent += add;
+    }else if (element.tagName == "INPUT") {
+        element.value += add;
+    }
+}
+
 function calculate(input, output) {
     let result = 0;
 
