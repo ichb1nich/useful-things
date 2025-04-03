@@ -41,9 +41,33 @@ function addText(add, id) {
 }
 
 function calculate(input, output) {
-    let result = 0;
-
     let temp = document.getElementById(input).value;
+    
+    if (temp.includes("(")) {
+        let tempFormula = temp.match(/\((.*?)\)/g).map(item => item.slice(1, -1));
+
+        let resultes = [];
+
+        console.log("#####################################################: " + tempFormula[0]);
+
+        for (let i = 0; i < tempFormula.length; i++) {
+            resultes.push(calculatePart(tempFormula[i]));
+        }
+        
+        for (let i = 0; i < resultes.length; i++) {
+            temp = temp.replace("(" + tempFormula[i]  + ")", resultes[i]);
+        }
+    }
+
+    let result = calculatePart(temp);
+
+    document.getElementById(output).textContent = result;
+
+    console.log(result);
+}
+
+function calculatePart(temp) {
+    let result = 0;
     const formula = temp.replace(/ /g, "");
     let formulaNumbers = formula.split(/[\+\-\*\/]/);
     let formulaActions = formula.split(/[0-9]/).filter(action => action.trim() !== "");
@@ -133,7 +157,5 @@ function calculate(input, output) {
         result = "Bitte gib eine gültige Formel ein.";
     }
 
-    document.getElementById(output).textContent = result;
-
-    console.log(result);
+    return result;
 }
