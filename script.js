@@ -31,6 +31,10 @@ function receptCalculate() {
     }
 }
 
+function getInput(id) {
+    return document.getElementById(id).value;
+}
+
 function deleteClonedObjekt(tempid) {
     let id = 0;
 
@@ -116,7 +120,7 @@ function calculatePart(temp) {
     let result = 0;
     const formula = temp.replace(/ /g, "");
     let formulaNumbers = formula.split(/[\+\-\*\/]/);
-    let formulaActions = formula.split(/[0-9]/).filter(action => action.trim() !== "");
+    let formulaActions = formula.split(/[0-9.]/).filter(action => action.trim() !== "");
 
     for (let i = 0; i < formulaNumbers.length; i++) {
         formulaNumbers[i] = parseFloat(formulaNumbers[i]);

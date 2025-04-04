@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zufallszahlen</title>
+</head>
+<body>
+    <h1>Rabatt Rechner</h1>
+
+    <div>
+        <p>Originalpreis in €</p>
+        <input type="text" id="originalcircle" placeholder="Originalpreis in €">
+    </div>
+
+    <div>
+        <p>Rabatt in %</p>
+        <input type="text" id="discount" placeholder="Rabatt in %">
+    </div>
+
+    <p id="endcircle"></p>
+
+    <div class="button">
+        <button onclick="tell([(calculatePart(getInput('originalcircle') + '*' + getInput('discount') / 100)).toFixed(3)], 'endcircle')">Berechnen</button>
+    </div>
+
+    <div>
+        <button class="back" onclick="windowLocation('index.html')">Zurück</button>
+    </div>
+</body>
+</html>
