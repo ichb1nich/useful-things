@@ -10,70 +10,70 @@ body {
 
 h1 {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1.25rem; /* 20px to rem */
     color: #4CAF50;
 }
 
 h4 {
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem; /* 5px to rem */
     color: #555;
 }
 
 p {
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     color: #4CAF50; /* Allgemein grün für alle <p>-Elemente */
 }
 
 /* Eingabebereich */
 div {
-    margin: 15px auto;
+    margin: 0.9375rem auto; /* 15px to rem */
     width: 80%;
-    max-width: 400px;
+    max-width: 25rem; /* 400px to rem */
     text-align: center;
     display: block; /* Stack elements vertically */
-    gap: 10px; /* Add spacing between objects */
+    gap: 0.625rem; /* 10px to rem */
 }
 
 div.threerow {
     display: flex; /* Ensure flexbox layout */
     flex-wrap: wrap; /* Allow wrapping to the next row */
-    gap: 10px; /* Add spacing between objects */
+    gap: 0.625rem; /* 13 to rem */
     justify-content: space-between; /* Distribute items evenly */
     justify-content: center; /* Reset to default for better alignment */
 }
 
 div.threerow > * {
-    flex: 1 1 calc(33.33% - 10px); /* Allow up to three items per row */
-    max-width: calc(33.33% - 10px); /* Ensure items don't exceed one-third of the row */
+    flex: 1 1 calc(33.33% - 0.625rem); /* 10px to rem */
+    max-width: calc(33.33% - 0.625rem); /* 10px to rem */
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
+    padding: 0.625rem; /* 10px to rem */
+    margin-top: 0.3125rem; /* 5px to rem */
+    border: 0.0625rem solid #ccc; /* 1px to rem */
+    border-radius: 0.3125rem; /* 5px to rem */
+    font-size: 1rem;
     box-sizing: border-box;
 }
 
 /* Button */
 .button {
-    margin-top: 20px;
+    margin-top: 1.25rem; /* 20px to rem */
 }
 
 .button button {
-    margin-top: 10px; /* Add spacing above the button */
+    margin-top: 0.625rem; /* 10px to rem */
 }
 
 button {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 5px;
+    padding: 0.625rem 1.25rem; /* 10px 20px to rem */
+    font-size: 1rem;
+    border-radius: 0.3125rem; /* 5px to rem */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -101,7 +101,7 @@ button:hover {
 .buttondiv {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 0.625rem; /* 10px to rem */
 }
 
 /* Zurück-Button */
@@ -109,12 +109,12 @@ button:hover {
     background-color: #ff5722; /* Auffällige Farbe für Zurück-Knöpfe */
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 5px;
+    padding: 0.625rem 1.25rem; /* 10px 20px to rem */
+    font-size: 1rem;
+    border-radius: 0.3125rem; /* 5px to rem */
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 10px 0; /* Abstand nach oben und unten */
+    margin: 0.625rem 0; /* 10px to rem */
     display: inline-block; /* Für saubere Platzierung */
     text-align: center;
 }
@@ -127,8 +127,8 @@ button:hover {
     display: flex;
     justify-content: center; /* Horizontale Zentrierung */
     align-items: center;    /* Vertikale Zentrierung */
-    gap: 10px;             /* Abstand zwischen den Buttons */
-    margin-top: 20px;      /* Abstand nach oben */
+    gap: 0.625rem; /* 10px to rem */
+    margin-top: 1.25rem; /* 20px to rem */
     width: 100%;          /* Volle Breite für die Buttonliste */
     flex-wrap: wrap;      /* Zeilenumbruch bei kleinen Bildschirmen */
 }
@@ -140,6 +140,6 @@ button:hover {
     width: 35%;
     aspect-ratio: 1/1;
     text-align: center;
-    font-size: 1em;         /* Einheitliche Schriftgröße */
+    font-size: 1rem;         /* Einheitliche Schriftgröße */
     font-weight: bold;      /* Text besser sichtbar */
 }

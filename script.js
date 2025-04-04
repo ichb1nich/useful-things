@@ -2,6 +2,46 @@ function windowLocation(link) {
     window.location.href = link;
 }
 
+let cloneCount = 1;
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("addingredient").addEventListener("click", function() {
+        let newIngredient = document.getElementById("ingredient0").cloneNode(true);
+        newIngredient.id = "ingredient" + cloneCount;
+
+        document.getElementById("ingredientcontainer").appendChild(newIngredient);
+    })
+});
+
+function receptCalculate() {
+    const multiplicator = parseFloat(document.getElementById("newpeople").value) / parseFloat(document.getElementById("oldpeople").value);
+
+    let div = 0;
+
+    for (let i = 0; i < cloneCount + 1; i++) {
+        div = document.getElementById("ingredient" + i);
+
+        let oldValue = div.querySelector(".ingredientinput").value;
+        div.querySelector(".ingredientinput").value = oldValue.replace(parseFloat(oldValue), parseFloat(oldValue) * multiplicator);
+    }
+}
+
+function deleteClonedObjekt(tempid) {
+    let id = 0;
+
+    if (tempid == "letcloneCount") {
+        id = "ingredient" + cloneCount;
+    } else {
+        id = tempid;
+    }
+
+    console.log(id);
+    document.getElementById(id).remove();
+
+    if (cloneCount > 1) {
+        cloneCount--;
+    }
+}
+
 function getRandomNumber(output) {
     let min = parseInt(document.getElementById("min").value);
     let max = parseInt(document.getElementById("max").value);

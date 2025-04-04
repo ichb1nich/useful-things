@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zufallszahlen</title>
+</head>
+<body>
+    <h1>Rezept umwandler</h1>
+
+    <div>
+        <input type="text" placeholder="Vorgegebene Personenanzahl" id="oldpeople">
+        <input type="text" placeholder="Gewünschte Personenanzahl" id="newpeople">
+    </div>
+
+    <div class="button">
+        <button id="addingredient">+ Zutat</button>
+        <button onclick="deleteClonedObjekt('letcloneCount')" style="background-color: #ff5722;">- Zutat</button>
+    </div>
+
+    <div id="ingredientcontainer">
+        <div id="ingredient0" class="ingredient">
+            <p style="margin-bottom: 0.1rem;">Zutatenmenge</p>
+            <input type="text" class="ingredientinput" placeholder="Zutatenmenge">
+        </div>
+    </div>
+
+    <div class="button" onclick="receptCalculate()">
+        <button>Berechnen</button>
+    </div>
+
+    <div>
+        <button class="back" onclick="windowLocation('index.html')">Zurück</button>
+    </div>
+</body>
+</html>
