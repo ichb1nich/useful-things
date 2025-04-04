@@ -2,9 +2,12 @@ function windowLocation(link) {
     window.location.href = link;
 }
 
-let cloneCount = 1;
+let cloneCount = 0;
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("addingredient").addEventListener("click", function() {
+        cloneCount++;
+        console.log("Clone Count: " + cloneCount);
+
         let newIngredient = document.getElementById("ingredient0").cloneNode(true);
         newIngredient.id = "ingredient" + cloneCount;
 
@@ -19,6 +22,9 @@ function receptCalculate() {
 
     for (let i = 0; i < cloneCount + 1; i++) {
         div = document.getElementById("ingredient" + i);
+
+        console.log("cloneCount: " + cloneCount);
+        console.log("Div ID: " + div.id);
 
         let oldValue = div.querySelector(".ingredientinput").value;
         div.querySelector(".ingredientinput").value = oldValue.replace(parseFloat(oldValue), parseFloat(oldValue) * multiplicator);
