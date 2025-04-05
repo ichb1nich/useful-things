@@ -4,34 +4,6 @@ function windowLocation(link) {
     window.location.href = link;
 }
 
-function receptCalculate() {
-    const multiplicator = parseFloat(document.getElementById("newpeople").value) / parseFloat(document.getElementById("oldpeople").value);
-
-    let div = 0;
-
-    for (let i = 0; i < cloneCount + 1; i++) {
-        div = document.getElementById("ingredient" + i);
-
-        console.log("cloneCount: " + cloneCount);
-        console.log("Div ID: " + div.id);
-
-        const oldValue = div.querySelector("#ingredientinput").value;
-
-        const oldValueFloat = parseFloat(oldValue.match(/(?<![.,])\d*[.,]?\d+/)[0].replace(",", "."));
-
-        let newValue = oldValue.replace(oldValue.match(/(?<![.,])\d*[.,]?\d+/)[0], (oldValueFloat * multiplicator).toFixed(1));
-
-        if (newValue == "NaN" || newValue == "") {
-            newValue = "Bitte gib gültige Zahlen ein.";
-        }
-
-        console.log("Neuer Wert: " + newValue);
-        console.log("Alter Wert: " + oldValueFloat);
-
-        div.querySelector("#ingredientoutput").textContent = newValue;
-    }
-}
-
 function getInput(id) {
     return document.getElementById(id).value;
 }
