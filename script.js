@@ -130,7 +130,7 @@ function calculate(input, output) {
 
 function calculatePart(temp) {
     let result = 0;
-    const formula = temp.replace(/ /g, "");
+    const formula = (temp.replace(/ /g, "")).replace(/,/g, ".");
     let formulaNumbers = formula.split(/[\+\-\*\/]/);
     let formulaActions = formula.split(/[0-9.]/).filter(action => action.trim() !== "");
 
