@@ -147,8 +147,8 @@ button:hover {
 .rectangle {
     width: 10rem;
     height: 10rem;
+    border: 2px solid #45a049;
     resize: both;
+    overflow: auto;
     background-color: #333;
-    position: absolute;
-    cursor: move;
 }
