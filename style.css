@@ -143,3 +143,12 @@ button:hover {
     font-size: 1rem;         /* Einheitliche Schriftgröße */
     font-weight: bold;      /* Text besser sichtbar */
 }
+
+.rectangle {
+    width: 10rem;
+    height: 10rem;
+    resize: both;
+    background-color: #333;
+    position: absolute;
+    cursor: move;
+}
