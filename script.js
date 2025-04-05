@@ -28,9 +28,10 @@ function receptCalculate() {
 
         const oldValue = div.querySelector("#ingredientinput").value;
 
-        const oldValueFloat = parseFloat(oldValue.match(/(?<!\.)\d*\.?\d+/)[0].replace(",", "."));
+        const oldValueFloat = parseFloat(oldValue.match(/(?<![.,])\d*[.,]?\d+/)[0].replace(",", "."));
 
-        let newValue = oldValue.replace(oldValueFloat, (oldValueFloat * multiplicator).toFixed(1));
+        let newValue = oldValue.replace(oldValue.match(/(?<![.,])\d*[.,]?\d+/)[0], (oldValueFloat * multiplicator).toFixed(1));
+
         if (newValue == "NaN" || newValue == "") {
             newValue = "Bitte gib gültige Zahlen ein.";
         }
