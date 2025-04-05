@@ -1,19 +1,8 @@
+console.log("Script loaded.");
+
 function windowLocation(link) {
     window.location.href = link;
 }
-
-let cloneCount = 0;
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("addingredient").addEventListener("click", function() {
-        cloneCount++;
-        console.log("Clone Count: " + cloneCount);
-
-        let newIngredient = document.getElementById("ingredient0").cloneNode(true);
-        newIngredient.id = "ingredient" + cloneCount;
-
-        document.getElementById("ingredientcontainer").appendChild(newIngredient);
-    })
-});
 
 function receptCalculate() {
     const multiplicator = parseFloat(document.getElementById("newpeople").value) / parseFloat(document.getElementById("oldpeople").value);
@@ -51,6 +40,9 @@ function deleteClonedObjekt(tempid) {
     let id = 0;
 
     if (tempid == "letcloneCount") {
+        if (cloneCount == 0) {
+            return;
+        }
         id = "ingredient" + cloneCount;
     } else {
         id = tempid;

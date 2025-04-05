@@ -9,6 +9,23 @@
     <title>Zufallszahlen</title>
 </head>
 <body>
+    <script>
+        console.log("Script loaded");
+
+        var cloneCount = 0;
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById("addingredient").addEventListener("click", function() {
+                cloneCount++;
+                console.log("Clone Count: " + cloneCount);
+
+                let newIngredient = document.getElementById("ingredient0").cloneNode(true);
+                newIngredient.id = "ingredient" + cloneCount;
+
+                document.getElementById("ingredientcontainer").appendChild(newIngredient);
+            })
+        });
+    </script>
+
     <h1>Rezept umwandler</h1>
 
     <div>
